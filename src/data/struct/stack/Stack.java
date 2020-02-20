@@ -1,4 +1,6 @@
-package data.struct;
+package data.struct.stack;
+
+import java.util.Arrays;
 
 /**
  * @author: LiJie
@@ -22,8 +24,8 @@ public class Stack{
         int [] tempArr = new int[length + 1];
         System.arraycopy(arr,0, tempArr, 0, length);
         tempArr[length] = element;
-        length++;
         setArr(tempArr);
+        length++;
     }
     //弹栈
     public int pop(){
@@ -34,8 +36,8 @@ public class Stack{
         int top = arr[length - 1];
         int [] tempArr = new int[length - 1];
         System.arraycopy(arr,0, tempArr, 0, length -1);
-        length--;
         setArr(tempArr);
+        length--;
         return top;
     }
     //获取栈顶元素
@@ -47,4 +49,11 @@ public class Stack{
         return arr[length -1];
     }
 
+    @Override
+    public String toString() {
+        return "Stack{" +
+                "length=" + length +
+                ", arr=" + Arrays.toString(arr) +
+                '}';
+    }
 }

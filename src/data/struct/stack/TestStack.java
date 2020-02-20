@@ -1,4 +1,4 @@
-package data.struct;
+package data.struct.stack;
 
 /**
  * @author: LiJie
@@ -17,6 +17,7 @@ public class TestStack {
         stack.push(7);
         stack.push(12);
         stack.push(6);
+        System.out.println(stack.toString());
         //测试压栈
         System.out.println(stack.getLength());
         System.out.println(stack.getTop());
