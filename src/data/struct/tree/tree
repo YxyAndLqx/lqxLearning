@@ -40,4 +40,4 @@
         按照  左—>根->右
     （3）后根遍历<根后序遍历>
         按照  左—>右->根
-    例子:
+    遍历实现:lqxLearning\src\data\struct\tree\TreeTraverse.java
