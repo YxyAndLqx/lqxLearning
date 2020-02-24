@@ -70,14 +70,14 @@ public class BinaryTest {
          *           H    I  J
          */
         System.out.println("根先序遍历：");
-        TreeTraverse.preOrder(nodeA);
+        TreeTraverse.preOrderRecursion(nodeA);
         System.out.println();
         System.out.println("根中序遍历：");
-        TreeTraverse.inOrder(nodeA);
+        TreeTraverse.inOrderRecursion(nodeA);
         System.out.println();
         System.out.println("根后序遍历：");
-        TreeTraverse.postOrder(nodeA);
-
+        TreeTraverse.postOrderRecursion(nodeA);
+        System.out.println();
         /**
          * 非递归版二叉树遍历
          *                     A
@@ -88,5 +88,8 @@ public class BinaryTest {
          *           ↙ ↘    ↙
          *           H    I  J
          */
+        System.out.println("非递归根先序遍历：");
+        TreeTraverse.preOrder(nodeA);
+        System.out.println();
     }
 }

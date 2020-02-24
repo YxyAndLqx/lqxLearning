@@ -10,7 +10,9 @@ public class BinaryTree {
     private BinaryTree subLeft;
     private String data;
 
+    public BinaryTree(){
 
+    }
     public BinaryTree(String data){
         this.data =data;
     }
