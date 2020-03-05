@@ -8,9 +8,18 @@ public class HeapTest {
     public static void main(String [] args){
         Heap heap = new Heap();
         heap.MaxHeap();
-        heap.InsertHeap(18);
-        heap.InsertHeap(20);
+        heap.insertHeap(18);
+        heap.insertHeap(20);
+        heap.insertHeap(22);
+        heap.insertHeap(5);
+        heap.insertHeap(6);
+        heap.insertHeap(40);
+        heap.insertHeap(68);
+
 //        heap.InsertHeap(23);
-        System.out.print(heap.toString());
+        System.out.println(heap.toString());
+
+        heap.deleteHeapMax();
+        System.out.println(heap.toString());
     }
 }
