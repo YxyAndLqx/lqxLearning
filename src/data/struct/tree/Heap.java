@@ -13,7 +13,7 @@ public class Heap {
     private int count;
     private int [] heapElementTypeArray = new int[MaxSize];
     //初始化堆，堆的计数器清零
-    public void MaxHeap(){
+    public void initHeap(){
         this.count = 0;
     }
     //判断堆是否为空
@@ -72,10 +72,10 @@ public class Heap {
     }
 
     /**
-     * 复制堆，去掉根，然后插入。
+     * 复制堆，去掉根，然后使用堆插入的方法。
      */
     //堆中删除最大值    舍去数组0，直接从1开始，左右子节点为 2i 和 2i+1
-    public void  deleteHeapMax(){
+    public void  deleteHeapMaxUseInsert(){
         if (!this.HeapEmpty()){
             int i = this.count - 1;
             int [] tempArray = new int[i];
@@ -84,12 +84,37 @@ public class Heap {
             }
             int [] heapClearArray = new int[MaxSize];
             System.arraycopy(heapClearArray,0, this.heapElementTypeArray,0, MaxSize);
-            this.MaxHeap();
+            this.initHeap();
             for (int k = 0; k < i; k++){
                 this.insertHeap(tempArray[k]);
             }
         }
     }
+
+    /**
+     *
+     *  不用堆插入的方法
+     *  堆中删除最大值    舍去数组0，直接从1开始，左右子节点为 2i 和 2i+1
+     */
+    public void  deleteHeapMaxNotInsert(){
+        int parent = 1;
+        int child = 2;
+        if (!this.HeapEmpty()){
+//            int element = this.heapElementTypeArray[1];
+            int temp = this.heapElementTypeArray[this.count--];
+            while (child <= this.count && this.heapElementTypeArray[child] < this.heapElementTypeArray[child + 1]){
+                child++;
+                if (temp >= this.heapElementTypeArray[child])
+                    break;
+                this.heapElementTypeArray[parent] = this.heapElementTypeArray[child];
+                parent = child;
+                child *= 2;
+            }
+            this.heapElementTypeArray[parent] = temp;
+//            return element;
+        }
+    }
+
 
     @Override
     public String toString() {

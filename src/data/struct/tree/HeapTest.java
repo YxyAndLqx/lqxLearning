@@ -7,7 +7,7 @@ package data.struct.tree;
 public class HeapTest {
     public static void main(String [] args){
         Heap heap = new Heap();
-        heap.MaxHeap();
+        heap.initHeap();
         heap.insertHeap(18);
         heap.insertHeap(20);
         heap.insertHeap(22);
@@ -18,8 +18,14 @@ public class HeapTest {
 
 //        heap.InsertHeap(23);
         System.out.println(heap.toString());
-
-        heap.deleteHeapMax();
+        // 删除
+        heap.deleteHeapMaxUseInsert();
+        System.out.println(heap.toString());
+        // 插入
+        heap.insertHeap(68);
+        System.out.println(heap.toString());
+        //删除
+        heap.deleteHeapMaxNotInsert();
         System.out.println(heap.toString());
     }
 }
