@@ -101,9 +101,15 @@ public class Heap {
         int child = 2;
         if (!this.HeapEmpty()){
 //            int element = this.heapElementTypeArray[1];
+//            System.out.println(this.heapElementTypeArray[parent--]);
+//            System.out.println(parent);
+
             int temp = this.heapElementTypeArray[this.count--];
-            while (child <= this.count && this.heapElementTypeArray[child] < this.heapElementTypeArray[child + 1]){
-                child++;
+           System.out.println(this.count);
+
+            while (child <= this.count ){
+                if(child < this.count&& (this.heapElementTypeArray[child] < this.heapElementTypeArray[child + 1]))
+                    child++;
                 if (temp >= this.heapElementTypeArray[child])
                     break;
                 this.heapElementTypeArray[parent] = this.heapElementTypeArray[child];
